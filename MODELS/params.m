@@ -17,7 +17,7 @@ mu = 0.015;         % rolling friction coefficient (dimensionless)
 
 %% Propulsion‐cycle timing parameters (standard cycle)
 T1 = 0.5;           % time to ramp to Fmax (s) 
-T2 = 1.0;           % time constant‐force applied (s) 
+T2 = 1;           % time constant‐force applied (s) 
 T3 = 1.0;           % hand return time (s) on flat surface 
 cycle_repeat = 10;  % number of cycles in simulation 
 
@@ -40,3 +40,19 @@ fprintf('T1 = %.2f s, T2 = %.2f s, T3 = %.2f s, cycle_repeat = %d\n', T1, T2, T3
 fprintf('F3_equal = %.2f N, F3_left = %.2f N, F4_right = %.2f N\n', F3_equal, F3_left, F4_right);
 fprintf('time_delay = %.2f s\n', time_delay);
 
+%% Motor Parameters
+J_motor=0.01; %kg.m^2
+b_motor=0.1; %N.m.s
+Ke_motor=0.01; %V/rad/sec
+Kt_motor=0.01; %N.m/Amp
+R_motor=1; %Ohm
+L_motor=0.5; %H
+K_motor=0.01;
+
+A = [-b_motor/J_motor   K_motor/J_motor
+    -K_motor/L_motor   -R_motor/L_motor];
+B = [0
+    1/L_motor];
+C = [1 0];
+D = [ 0];
+motor_ss = ss(A,B,C,D)
