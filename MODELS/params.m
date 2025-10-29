@@ -10,6 +10,8 @@ b = 0.70;           % wheelchair width (m)
 h = 0.50;           % height of CG above ground (m) 
 g = 9,81;           % Gravity acceleration (m/s^2)
 r = 0.25;           % Radius of the wheel
+
+v_s = 0.05; % threshold for force
 %% Inertia / other
 Izz = 6.78;         % moment of inertia about vertical axis (kg·m^2) 
 
