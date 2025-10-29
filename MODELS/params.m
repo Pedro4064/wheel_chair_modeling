@@ -9,6 +9,7 @@ l2 = 0.20;          % distance CG to rear axle (m)
 b = 0.70;           % wheelchair width (m) 
 h = 0.50;           % height of CG above ground (m) 
 g = 9,81;           % Gravity acceleration (m/s^2)
+r = 0.25;           % Radius of the wheel
 %% Inertia / other
 Izz = 6.78;         % moment of inertia about vertical axis (kg·m^2) 
 
@@ -48,6 +49,7 @@ Kt_motor=0.01; %N.m/Amp
 R_motor=1; %Ohm
 L_motor=0.5; %H
 K_motor=0.01;
+V_max=50; %Volts
 
 A = [-b_motor/J_motor   K_motor/J_motor
     -K_motor/L_motor   -R_motor/L_motor];
