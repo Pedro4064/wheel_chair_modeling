@@ -44,14 +44,14 @@ fprintf('F3_equal = %.2f N, F3_left = %.2f N, F4_right = %.2f N\n', F3_equal, F3
 fprintf('time_delay = %.2f s\n', time_delay);
 
 %% Motor Parameters
-J_motor   = 0.00042;   % kg.m^2   (your original value)
-b_motor   = 0.00020;   % N.m.s
-Ke_motor  = 0.05;      % V/(rad/s)
-Kt_motor  = 0.05;      % N.m/A
-R_motor   = 0.15;      % Ohm
-L_motor   = 0.0003;    % H
-K_motor   = Kt_motor;
-V_max     = 36;        % Volts  (common e-wheelchair nominal)
+J_motor=0.00042; %kg.m^2
+b_motor=0.001; %N.m.s
+Ke_motor=0.05; %V/rad/sec
+Kt_motor=0.05; %N.m/Amp
+R_motor=0.15; %Ohm
+L_motor=0.0003; %H
+K_motor=0.05;
+V_max=50; %Volts
 
 A = [-b_motor/J_motor   K_motor/J_motor
     -K_motor/L_motor   -R_motor/L_motor];
