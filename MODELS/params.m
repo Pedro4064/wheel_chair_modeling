@@ -2,7 +2,7 @@
 % Source: Dynamical Behavior of a Wheelchair under the Most Common Deformity of the Propulsion Cycle
 
 %% Physical / geometric parameters
-m = 110;            % mass of system (kg) 
+m = 180;            % mass of system (kg) 
 L = 0.50;           % distance between axles (m) 
 l1 = 0.30;          % distance CG to front axle (m) 
 l2 = 0.20;          % distance CG to rear axle (m) 
@@ -51,8 +51,8 @@ Kt_motor  = 0.05;      % N.m/A
 R_motor   = 0.15;      % Ohm
 L_motor   = 0.0003;    % H
 K_motor   = Kt_motor;
-V_max     = 36;        % Volts  (common e-wheelchair nominal)
-
+V_max     = 24;        % Volts  (common e-wheelchair nominal)
+G_r = 32; % Gear ratio
 A = [-b_motor/J_motor   K_motor/J_motor
     -K_motor/L_motor   -R_motor/L_motor];
 B = [0
